@@ -1,3 +1,14 @@
-<form [formGroup] = "myForm" ()>
-
+<form [formGroup]="myForm" (ngSubmit)="btnClick(n)">
+    <p>Inserisci il tuo nome</p>
+    <input name="first" placeholder="nome" type="text" [formControl]="myForm.controls['nome']" #n>
+    <p>Inserisci il tuo cognome</p>
+    <input name="last" placeholder="cognome" type="text" [formControl]="myForm.controls['cognome']" #cn>
+    <p>Inserisci la tue email</p>
+    <input name="mail" placeholder="email" type="text" [formControl]="myForm.controls['email']" #m>
+    <p>Inserisci il tuo username</p>
+    <input name="user" placeholder="username" type="text" [formControl]="myForm.controls['username']" #un>
+    <p>Inserisci la tua password</p>
+    <input name="pw" placeholder="password" type="password" [formControl]="myForm.controls['password']" #pw>
+    <hr>
+    <button type="submit">Bottone brutto</button>
 </form>

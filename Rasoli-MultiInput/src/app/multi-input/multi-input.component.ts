@@ -9,19 +9,23 @@ import {
   styleUrls: ['./multi-input.component.css']
 })
 export class MultiInputComponent implements OnInit {
-  myForm: FormGroup;
-  constructor(fb: FormBuilder) {
-    this.myForm = fb.group(
-      {
-        'nome' : [''],
-        'cognome' : [''],
-        'username' : [''],
-        'email': [''],
-        'password' : ['']
-      }
-    )
-   }
+  myForm : FormGroup;
+  constructor (fb: FormBuilder)
+  {
+    this.myForm = fb.group({
+      'nome' : [''],
+      'cognome':[''],
+      'email':[''],
+      'username':[''],
+      'password':['']
+    })
 
+  }
+  btnClick(n : HTMLInputElement):Boolean
+  {
+    console.log(n.value);
+    return false;
+  }
   ngOnInit() {
   }
 
