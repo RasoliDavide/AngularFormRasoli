@@ -1,14 +1,14 @@
-<form [formGroup]="myForm" (ngSubmit)="btnClick(n)">
+<form [formGroup]="myForm" (ngSubmit)="btnClick(n)" class="form-group container" style = "margin-top: 20px;">
     <p>Inserisci il tuo nome</p>
-    <input name="first" placeholder="nome" type="text" [formControl]="myForm.controls['nome']" #n>
+    <input name="first" placeholder="nome" type="text" [formControl]="myForm.controls['nome']" class="form-control" #n>
     <p>Inserisci il tuo cognome</p>
-    <input name="last" placeholder="cognome" type="text" [formControl]="myForm.controls['cognome']" #cn>
+    <input name="last" placeholder="cognome" type="text" [formControl]="myForm.controls['cognome']" class="form-control" #cn>
     <p>Inserisci la tue email</p>
-    <input name="mail" placeholder="email" type="text" [formControl]="myForm.controls['email']" #m>
+    <input name="mail" placeholder="email" type="email" [formControl]="myForm.controls['email']"  class="form-control"#m>
     <p>Inserisci il tuo username</p>
-    <input name="user" placeholder="username" type="text" [formControl]="myForm.controls['username']" #un>
+    <input name="user" placeholder="username" type="text" [formControl]="myForm.controls['username']" class="form-control" #un>
     <p>Inserisci la tua password</p>
-    <input name="pw" placeholder="password" type="password" [formControl]="myForm.controls['password']" #pw>
+    <input name="pw" placeholder="password" type="password" [formControl]="myForm.controls['password']" class="form-control" #pw>
     <hr>
     <button type="submit">Bottone brutto</button>
 </form>

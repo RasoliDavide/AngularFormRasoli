@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { 
   FormBuilder,
-  FormGroup
+  FormGroup,
+  Validators
 } from '@angular/forms';
 @Component({
   selector: 'app-multi-input',
@@ -10,10 +11,11 @@ import {
 })
 export class MultiInputComponent implements OnInit {
   myForm : FormGroup;
+
   constructor (fb: FormBuilder)
   {
     this.myForm = fb.group({
-      'nome' : [''],
+      'nome' : ['', Validators.required],
       'cognome':[''],
       'email':[''],
       'username':[''],
@@ -21,9 +23,20 @@ export class MultiInputComponent implements OnInit {
     })
 
   }
-  btnClick(n : HTMLInputElement):Boolean
+  btnClick(n : HTMLInputElement, cn: HTMLInputElement, m: HTMLInputElement, un: HTMLInputElement, pw: HTMLInputElement):Boolean
   {
-    console.log(n.value);
+    if(this. myForm.valid)
+    {
+      console.log("Nome: " + this.myForm.controls['nome'].value);
+      console.log("Cognome: " + this.myForm.controls['cognome'].value);
+      console.log("Mail: " + this.myForm.controls['email'].value);
+      console.log("Username: " + this.myForm.controls['username'].value);
+      console.log("Password: " + this.myForm.controls['password'].value);
+    }
+    else
+    {
+      console.log("NOH");
+    }
     return false;
   }
   ngOnInit() {
